@@ -72,19 +72,19 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
             geoY = sensorEvent.values[1];
             geoZ = sensorEvent.values[2];
         }
-        text_Bar.setText(lastX+ "/n" + lastY + "/n" + lastZ);
+
         if(Math.abs(Math.abs(lastX)-Math.abs(geoX)) > Math.abs(Math.abs(lastY)-Math.abs(geoY)) &
                 Math.abs(Math.abs(lastX)-Math.abs(geoX)) > Math.abs(Math.abs(lastZ)-Math.abs(geoZ))){
-            if (Math.abs(Math.abs(lastX)-Math.abs(geoX)) > (seek1+2)){
+            if (Math.abs(Math.abs(lastX)-Math.abs(geoX)) > (seek1+2) & Math.abs(Math.abs(lastX)-Math.abs(geoX)) < 10){
                 webView_One.loadUrl("https://www.ecosia.org/");
 
-            }else if(Math.abs(Math.abs(lastX)-Math.abs(geoX)) > 11){
+            }else if(Math.abs(Math.abs(lastX)-Math.abs(geoX)) > 10){
                 webView_One.loadUrl("https://jumpingjaxfitness.files.wordpress.com/2010/07/dizziness.jpg");
             }
 
         }else if(Math.abs(Math.abs(lastY)-Math.abs(geoY)) > Math.abs(Math.abs(lastZ)-Math.abs(geoZ)) &
                 Math.abs(Math.abs(lastY)-Math.abs(geoY)) > Math.abs(Math.abs(lastX)-Math.abs(geoX))){
-            if (Math.abs(Math.abs(lastY)-Math.abs(geoY))> (seek1+12)){
+            if (Math.abs(Math.abs(lastY)-Math.abs(geoY))> (seek1+12) & Math.abs(Math.abs(lastY)-Math.abs(geoY)) < 20){
                 webView_One.loadUrl("https://www.dogpile.com/");
             }else if(Math.abs(Math.abs(lastX)-Math.abs(geoX)) > 20){
                 webView_One.loadUrl("https://jumpingjaxfitness.files.wordpress.com/2010/07/dizziness.jpg");
@@ -92,9 +92,9 @@ public class MainActivity extends AppCompatActivity implements SensorEventListen
         }else if(Math.abs(Math.abs(lastZ)-Math.abs(geoZ)) > Math.abs(Math.abs(lastX)-Math.abs(geoX)) &
                 Math.abs(Math.abs(lastZ)-Math.abs(geoZ)) > Math.abs(Math.abs(lastY)-Math.abs(geoY))){
 
-            if (Math.abs(Math.abs(lastZ)-Math.abs(geoZ)) > (seek1+2)){
+            if (Math.abs(Math.abs(lastZ)-Math.abs(geoZ)) > (seek1+2) & Math.abs(Math.abs(lastZ)-Math.abs(geoZ)) < 10){
                 webView_One.loadUrl("https://webb.nasa.gov/");
-            }else if(Math.abs(Math.abs(lastX)-Math.abs(geoX)) > 11){
+            }else if(Math.abs(Math.abs(lastX)-Math.abs(geoX)) > 10){
                 webView_One.loadUrl("https://jumpingjaxfitness.files.wordpress.com/2010/07/dizziness.jpg");
             }
         }
